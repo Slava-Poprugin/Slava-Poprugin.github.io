@@ -1,4 +1,4 @@
-/*
+﻿/*
 available controllers:
 	- whiteControllers
 	- blackControllers
@@ -36,7 +36,7 @@ available controllers:
 
 .audio7_html5_sticky {
 	width: 100%;
-	position: sticky;
+	position: fixed;
 	z-index: 999999;
 	bottom: 0px;
 	left: 0px;
@@ -105,7 +105,7 @@ available controllers:
 	float: left;
 	position: relative;
 	font-size:11px;
-	font-family: 'Rubik', sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	color:#FFF;
 	margin:0;
 	padding:0;
@@ -500,7 +500,7 @@ available controllers:
 
 /*song Author & Title*/
 .audio7_html5.whiteControllers .songTitle {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size:14px;
 	text-transform: capitalize;
 	position:absolute;
@@ -521,7 +521,7 @@ available controllers:
 }
 
 .audio7_html5.whiteControllers .songAuthor {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size:20px;
 	text-transform: uppercase;
 	position:absolute;
@@ -615,7 +615,7 @@ available controllers:
 	border-bottom:1px solid #ff0000;
 	line-height:2.4em;
 	font-size:12px;
-	font-family: 'Rubik', sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 }
 .audio7_html5.whiteControllers .thumbsHolder_ThumbOFF  .padding {
 	padding:2px 10px 10px 10px;
@@ -688,7 +688,7 @@ available controllers:
 	float: left;
 	position: relative;
 	font-size:11px;
-	font-family: 'Rubik', sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	color:#FFF;
 	margin:0;
 	padding:0;
@@ -1083,7 +1083,7 @@ available controllers:
 
 /*song Author & Title*/
 .audio7_html5.blackControllers .songTitle {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size:14px;
 	text-transform: capitalize;
 	position:absolute;
@@ -1104,7 +1104,7 @@ available controllers:
 }
 
 .audio7_html5.blackControllers .songAuthor {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size:20px;
 	text-transform: uppercase;
 	position:absolute;
@@ -1197,7 +1197,7 @@ available controllers:
 	border-bottom:1px solid #ff0000;
 	line-height:2.4em;
 	font-size:12px;
-	font-family: 'Rubik', sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 }
 .audio7_html5.blackControllers .thumbsHolder_ThumbOFF  .padding {
 	padding:2px 10px 10px 10px;
@@ -1323,14 +1323,14 @@ perspectiveDownZero        Made by Christian Pucci
 
 .barsContainer {
 	position:absolute;
-	width:200px;
+	width:184px;
 	height:60px;
 	z-index:0;
 	top:50%;
 	left:50%;
 	-webkit-transform: translate(-50%, 0%);/* Chrome, Safari, Opera */
 	-ms-transform:translate(-50%, 0%);/* IE 9 */
-	transform: translate(-35%, 0%);
+	transform: translate(-50%, 0%);
 }
 
 
@@ -1350,7 +1350,7 @@ perspectiveDownZero        Made by Christian Pucci
 }
 
 
-/*
+
 
 .sound {
 	-webkit-animation-name: sound;
@@ -1359,8 +1359,8 @@ perspectiveDownZero        Made by Christian Pucci
 	-webkit-animation-duration: 0ms;
 	animation-duration: 0ms;
 
-	-webkit-animation-delay: 1400ms;
-	-animation-delay: 1400ms;
+	-webkit-animation-delay: -800ms;
+	-animation-delay: -800ms;
 
 	-webkit-animation-timing-function: linear;
     animation-timing-function: linear;
@@ -1391,8 +1391,8 @@ perspectiveDownZero        Made by Christian Pucci
 	-webkit-animation-duration: 0ms;
 	animation-duration: 0ms;
 
-	-webkit-animation-delay: 1400ms;
-	-animation-delay: 1400ms;
+	-webkit-animation-delay: -800ms;
+	-animation-delay: -800ms;
 
 	-webkit-animation-timing-function: linear;
     animation-timing-function: linear;
@@ -1424,7 +1424,7 @@ perspectiveDownZero        Made by Christian Pucci
 .bar:nth-child(7)  { left: 25px; animation-duration: 421ms; }
 .bar:nth-child(8)  { left: 29px; animation-duration: 399ms; }
 .bar:nth-child(9)  { left: 33px; animation-duration: 467ms; }
-.bar:nth-child(10) { left: 37px; animation-duration: 422ms; }
+.bar:nth-child(10) { left: 37px; animation-duration: 422ms; }​
 .bar:nth-child(11) { left: 100px; animation-duration: 515ms;}
 
 .bar:nth-child(12) { left: 41px; animation-duration: 474ms;}
@@ -1476,7 +1476,7 @@ perspectiveDownZero        Made by Christian Pucci
 
 
 
-*/
+
 
 
 
@@ -1494,7 +1494,7 @@ perspectiveDownZero        Made by Christian Pucci
 }
 
 
- 
+
 
 /*
 ==============================================
@@ -1695,11 +1695,11 @@ openUpLeftRetournApollo2      Made by Christian Pucci
 
 .pickUp_on {
 	position:absolute;
-	top:-43px !important;
+	top:-23px !important;
 	/*top:0;*/
 	z-index:1;
 	left:0;
- 
+
 	width:149px;
 	height:134px;
 
@@ -1710,7 +1710,7 @@ openUpLeftRetournApollo2      Made by Christian Pucci
 
 .pickUp_off {
 	position:absolute;
-	top:-43px !important;
+	top:-23px !important;
 	/*top:0;*/
 	z-index:5;
 	left:0;
