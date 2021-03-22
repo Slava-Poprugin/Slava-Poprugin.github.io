@@ -1,11 +1,12 @@
 /*
- * Apollo - Sticky Full Width HTML5 Audio Player - v2.1.2
+ * Apollo - Sticky Full Width HTML5 Audio Player - v3.0
  *
  * Copyright 2017-2021, LambertGroup
  *
  */
 
 (function($) {
+	"use strict";
 
 	//vars
 	var val = navigator.userAgent.toLowerCase();
@@ -260,8 +261,8 @@
 				}
 
 				//update time
-				curTime = document.getElementById(current_obj.audioID).currentTime;
-				bufferedTime=0;
+				var curTime = document.getElementById(current_obj.audioID).currentTime;
+				var bufferedTime=0;
 				if (current_obj.is_changeSrc && !isNaN(current_obj.totalTime) && current_obj.totalTime!='Infinity') {
 					//alert (current_obj.totalTime);
 					generate_seekBar(current_obj,options,audio7_html5_container,audio7_html5_Audio_seek,audio7_html5_Audio_buffer,audio7_html5_Audio_timer_a,audio7_html5_Audio_timer_b,audio7_html5_play_btn,audio7_html5_Audio);
@@ -1020,13 +1021,15 @@
 				// mouse wheel
 				audio7_html5_thumbsHolderVisibleWrapper.mousewheel(function(event, delta, deltaX, deltaY) {
 					event.preventDefault();
-					var currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
-					//alert (currentScrollVal+' -- '+delta);
-					if ( (parseInt(currentScrollVal)>1 && parseInt(delta)==-1) || (parseInt(currentScrollVal)<100 && parseInt(delta)==1) ) {
-						currentScrollVal = currentScrollVal + delta;
-						current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
-						carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder)
-						//alert (currentScrollVal);
+					if (current_obj.selectedCateg_total_images>options.numberOfThumbsPerScreen) {
+								var currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
+								//alert (currentScrollVal+' -- '+delta);
+								if ( (parseInt(currentScrollVal)>1 && parseInt(delta)==-1) || (parseInt(currentScrollVal)<100 && parseInt(delta)==1) ) {
+									currentScrollVal = currentScrollVal + delta;
+									current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
+									carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder)
+									//alert (currentScrollVal);
+								}
 					}
 
 				});
@@ -1062,6 +1065,7 @@
 				  'left': (-1)*audio7_html5_thumbsHolderVisibleWrapper.width()+'px'
 			}, animateDur, 'easeOutQuad', function() {
 				  // Animation complete.
+					var authorLowerCases;
 				  audio7_html5_thumbsHolder.html("");
 
 				  current_obj.selectedCateg_total_images=0;
@@ -1263,15 +1267,16 @@
 				// mouse wheel
 				audio7_html5_thumbsHolderVisibleWrapper.mousewheel(function(event, delta, deltaX, deltaY) {
 					event.preventDefault();
-					var currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
-					//alert (currentScrollVal+' -- '+delta);
-					if ( (parseInt(currentScrollVal)>1 && parseInt(delta)==-1) || (parseInt(currentScrollVal)<100 && parseInt(delta)==1) ) {
-						currentScrollVal = currentScrollVal + delta;
-						current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
-						carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder)
-						//alert (currentScrollVal);
+					if (current_obj.selectedCateg_total_images>options.numberOfThumbsPerScreen) {
+								var currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
+								//alert (currentScrollVal+' -- '+delta);
+								if ( (parseInt(currentScrollVal)>1 && parseInt(delta)==-1) || (parseInt(currentScrollVal)<100 && parseInt(delta)==1) ) {
+									currentScrollVal = currentScrollVal + delta;
+									current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
+									carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder)
+									//alert (currentScrollVal);
+								}
 					}
-
 				});
 
 
@@ -1628,6 +1633,7 @@
 				});
 			}****/
 
+			var randNo=Math.floor(Math.random()*100000);
 			var current_obj = {
 				current_img_no:0,
 				origID:0,
@@ -1725,13 +1731,14 @@
 
 				windowWidth:0,
 
-				audioID:'',
 				audioObj:'',
 
-				stickyFixedPlayerWidth:980/*,
-				isPopup:false*/
+				stickyFixedPlayerWidth:980,
+				audioID:'audio7_audio_tag_id_'+randNo
 			};
-			current_obj.audioID=audio7_html5_Audio.attr('id');
+			//current_obj.audioID=audio7_html5_Audio.attr('id');
+			current_obj.html5_audio_tag=$('<audio id="'+current_obj.audioID+'" preload="metadata"></audio>');
+			audio7_html5_container.append(current_obj.html5_audio_tag);
 
 
 			current_obj.cookie_popupWin=getCookie(options,'cookie_popupWin');
@@ -2007,6 +2014,7 @@
 			var resultsSplit_arr=new Array();
 
 			var playlistElements = $('.xaudioplaylist', audio7_html5_container).children();
+			var currentElement;
 			playlistElements.each(function() { // ul-s
 	            currentElement = $(this);
 	            current_obj.total_images++;
@@ -2233,6 +2241,11 @@
 
 
 			audio7_html5_showHidePlaylist_btn.on( "click", function() {
+				var aux_opacity;
+				var aux_display;
+				var aux_margin_top;
+				var aux_height;
+
 				audio7_html5_thumbsHolderWrapper.css({
 						'visibility':'visible'
 				});
@@ -2445,25 +2458,28 @@
 				swipeStatus:function(event, phase, direction, distance, duration, fingerCount)
 				{
 					//$('#logulmeu').html("phase: "+phase+"<br>direction: "+direction+"<br>distance: "+distance);
-					if (direction=='up' || direction=='down') {
-						if (distance!=0) {
-							  currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
-							  if (direction=="up") {
-									currentScrollVal = currentScrollVal - 1.5;
-							  } else {
-									currentScrollVal = currentScrollVal + 1.5;
-							  }
-							  current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
-								//page scroll enabled
-								$('html, body')
-				            // Needed to remove previously bound handlers
-				            .off('touchstart touchmove')
-				            .on('touchstart touchmove', function (e) {
-				                e.preventDefault();
-				            });
-								//page scroll enabled
-							  carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder);
-						}
+					var currentScrollVal;
+					if (current_obj.selectedCateg_total_images>options.numberOfThumbsPerScreen) {
+									if (direction=='up' || direction=='down') {
+										if (distance!=0) {
+											  currentScrollVal=current_obj.audio7_html5_sliderVertical.slider( "value");
+											  if (direction=="up") {
+													currentScrollVal = currentScrollVal - 1.5;
+											  } else {
+													currentScrollVal = currentScrollVal + 1.5;
+											  }
+											  current_obj.audio7_html5_sliderVertical.slider( "value", currentScrollVal);
+												//page scroll enabled
+												$('html, body')
+								            // Needed to remove previously bound handlers
+								            .off('touchstart touchmove')
+								            .on('touchstart touchmove', function (e) {
+								                e.preventDefault();
+								            });
+												//page scroll enabled
+											  carouselScroll(currentScrollVal,current_obj,options,audio7_html5_thumbsHolder);
+										}
+									}
 					}
 
 				  //Here we can check the:
@@ -3025,7 +3041,7 @@
 
 			var TO = false;
 			$(window).on( "resize", function() {
-				doResizeNow=true;
+				var doResizeNow=true;
 
 				if (ver_ie!=-1 && ver_ie==9 && current_obj.windowWidth==0)
 					doResizeNow=false;
