@@ -2175,11 +2175,10 @@
 				} else {
 				manageCss3Animations(options,current_obj,audio7_html5_container,true);
 				audio7_html5_play_btn.addClass('AudioPause');
+				setCookie(options,'cookie_autoPlay', true);
 				setTimeout(function (){
 					document.getElementById(current_obj.audioID).play();
 					
-					
-					setCookie(options,'cookie_autoPlay', true);
 				}, 1400);}
 			});
 
