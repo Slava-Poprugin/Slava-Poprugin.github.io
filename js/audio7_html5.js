@@ -148,10 +148,13 @@
 									} else {
 										if (options.autoPlay) {
 											cancelAll(options,audio7_html5_container);
-											document.getElementById(current_obj.audioID).play();
+											
 											//audio7_html5_play_btn.click();
 											audio7_html5_play_btn.addClass('AudioPause');
 											manageCss3Animations(options,current_obj,audio7_html5_container,true);
+											setTimeout(function (){
+					document.getElementById(current_obj.audioID).play();
+				  }, 1400);
 										} else {
 											audio7_html5_play_btn.removeClass('AudioPause');
 											manageCss3Animations(options,current_obj,audio7_html5_container,false);
@@ -268,7 +271,9 @@
 					generate_seekBar(current_obj,options,audio7_html5_container,audio7_html5_Audio_seek,audio7_html5_Audio_buffer,audio7_html5_Audio_timer_a,audio7_html5_Audio_timer_b,audio7_html5_play_btn,audio7_html5_Audio);
 					if (val.indexOf("android") != -1) {
 						if (options.autoPlay) {
-							document.getElementById(current_obj.audioID).play();
+							setTimeout(function (){
+					document.getElementById(current_obj.audioID).play();
+				  }, 1400);
 							//audio7_html5_play_btn.click();
 							audio7_html5_play_btn.addClass('AudioPause');
 						} else {
@@ -2167,19 +2172,25 @@
 					manageCss3Animations(options,current_obj,audio7_html5_container,false);
 					setCookie(options,'cookie_autoPlay', false);
 				} else {
-					document.getElementById(current_obj.audioID).play();
+				  
 					audio7_html5_play_btn.addClass('AudioPause');
 					manageCss3Animations(options,current_obj,audio7_html5_container,true);
 					setCookie(options,'cookie_autoPlay', true);
+					setTimeout(function (){
+					document.getElementById(current_obj.audioID).play();
+				  }, 1400);
 				}
 			});
 
 			audio7_html5_rewind_btn.on( "click", function() {
 				document.getElementById(current_obj.audioID).currentTime=0;
 				cancelAll(options,audio7_html5_container);
-				document.getElementById(current_obj.audioID).play();
+			
 				audio7_html5_play_btn.addClass('AudioPause');
 				manageCss3Animations(options,current_obj,audio7_html5_container,true);
+				setTimeout(function (){
+					document.getElementById(current_obj.audioID).play();
+				  }, 1400);
 				//alert (document.getElementById(current_obj.audioID).playing);
 			});
 
@@ -2560,10 +2571,13 @@
 								} else {
 									if (options.autoPlay) {
 										cancelAll(options,audio7_html5_container);
-										document.getElementById(current_obj.audioID).play();
+								
 										//audio7_html5_play_btn.click();
 										audio7_html5_play_btn.addClass('AudioPause');
 										manageCss3Animations(options,current_obj,audio7_html5_container,true);
+										setTimeout(function (){
+					document.getElementById(current_obj.audioID).play();
+				  }, 1400);
 									} else {
 										audio7_html5_play_btn.removeClass('AudioPause');
 										manageCss3Animations(options,current_obj,audio7_html5_container,false);
