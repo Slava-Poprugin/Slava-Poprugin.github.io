@@ -1752,7 +1752,8 @@
 				audioObj:'',
 
 				stickyFixedPlayerWidth:980,
-				audioID:'audio7_audio_tag_id_'+randNo
+				//audioID:'audio7_audio_tag_id_'+randNo
+				audioID:'audio7_audio_tag_id_Slava'
 			};
 			//current_obj.audioID=audio7_html5_Audio.attr('id');
 			current_obj.html5_audio_tag=$('<audio id="'+current_obj.audioID+'" preload="metadata"></audio>');
