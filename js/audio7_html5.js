@@ -147,15 +147,10 @@
 									} else {
 										if (options.autoPlay) {
 											cancelAll(options,audio7_html5_container);
-											manageCss3Animations(options,current_obj,audio7_html5_container,true);
-											audio7_html5_play_btn.addClass('AudioPause');
-											setTimeout(function (){
-
-											
 											document.getElementById(current_obj.audioID).play();
 											//audio7_html5_play_btn.click();
-											
-											}, 1400);
+											audio7_html5_play_btn.addClass('AudioPause');
+											manageCss3Animations(options,current_obj,audio7_html5_container,true);
 										} else {
 											audio7_html5_play_btn.removeClass('AudioPause');
 											manageCss3Animations(options,current_obj,audio7_html5_container,false);
@@ -1564,17 +1559,8 @@
 
 
 			//the controllers
-			var audio7_html5_controlsDef = $('<!--<div class="AudioControls"> <a class="AudioCloseBut" title="Minimize"></a>--> <a class="AudioRewind" title="Rewind"></a><a class="AudioShuffle" title="Shuffle Playlist"></a><a class="AudioDownload" title="Download File"></a><a class="AudioBuy" title="Buy Now"></a><a class="AudioLyrics" title="Lyrics"></a><a class="AudioFacebook" title="Facebook"></a><a class="AudioTwitter" title="Twitter"></a><a class="AudioPopup" title="Popup"></a><a class="AudioPlay" title="Play/Pause"></a><a class="AudioPrev" title="Previous"></a><a class="AudioNext" title="Next"></a><a class="AudioShowHidePlaylist" title="Show/Hide Playlist"></a><a class="VolumeButton" title="Mute/Unmute"></a><div class="VolumeSlider"></div> <div class="AudioTimer_a">00:00</div><div class="AudioTimer_b">00:00</div>  </div>   <div class="AudioBuffer"></div><div class="AudioSeek"></div><div class="songTitle"><div class="songTitleInside"></div></div>  <div class="songAuthor"></div>    <div class="thumbsHolderWrapper"><div class="playlistPadding"><div class="selectedCategDiv"><div class="innerSelectedCategDiv">CATEGORIES</div></div> <div class="thumbsHolderVisibleWrapper"><div class="thumbsHolder"></div></div><div class="searchDiv"><input class="search_term" type="text" value="search..." /></div></div></div>  <div class="slider-vertical"></div> <div class="ximage_lbg"></div>  ');
-		//	var audio7_html5_the_bars=$('<div class="barsContainer"><div id="bars" class="perspectiveDownZero"><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2" style="display:none;"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div></div><div id="bars"><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound" style="display:none;"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div></div></div>');
-			if($(window).width() > 992) 
-{
-   var audio7_html5_the_bars=$('<div class="barsContainer"><canvas id="output" height="60" width="200"></canvas></div>');// change functionality for smaller screens
-} else {
-   var audio7_html5_the_bars=$('<div class="barsContainer"></div>');// change functionality for larger screens
-};
-		
-			
-			
+			var audio7_html5_controlsDef = $('<div class="AudioControls"> <a class="AudioCloseBut" title="Minimize"></a> <a class="AudioRewind" title="Rewind"></a><a class="AudioShuffle" title="Shuffle Playlist"></a><a class="AudioDownload" title="Download File"></a><a class="AudioBuy" title="Buy Now"></a><a class="AudioLyrics" title="Lyrics"></a><a class="AudioFacebook" title="Facebook"></a><a class="AudioTwitter" title="Twitter"></a><a class="AudioPopup" title="Popup"></a><a class="AudioPlay" title="Play/Pause"></a><a class="AudioPrev" title="Previous"></a><a class="AudioNext" title="Next"></a><a class="AudioShowHidePlaylist" title="Show/Hide Playlist"></a><a class="VolumeButton" title="Mute/Unmute"></a><div class="VolumeSlider"></div> <div class="AudioTimer_a">00:00</div><div class="AudioTimer_b">00:00</div>  </div>   <div class="AudioBuffer"></div><div class="AudioSeek"></div><div class="songTitle"><div class="songTitleInside"></div></div>  <div class="songAuthor"></div>    <div class="thumbsHolderWrapper"><div class="playlistPadding"><div class="selectedCategDiv"><div class="innerSelectedCategDiv">CATEGORIES</div></div> <div class="thumbsHolderVisibleWrapper"><div class="thumbsHolder"></div></div><div class="searchDiv"><input class="search_term" type="text" value="search..." /></div></div></div>  <div class="slider-vertical"></div> <div class="ximage_lbg"></div>  ');
+			var audio7_html5_the_bars=$('<div class="barsContainer"><div id="bars" class="perspectiveDownZero"><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2" style="display:none;"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div></div><div id="bars"><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound" style="display:none;"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div></div></div>');
 			var audio7_html5_vinyl_record_on=$('<div class="pickUp_on"><div class="disc xWheel1"></div><div class="openUpLeftRetournApollo ac"></div></div>');
 			var audio7_html5_vinyl_record_off=$('<div class="pickUp_off"><div class="disc pause_lbg"></div><div class="openUpLeftRetournApollo2 ac"></div></div>');
 
@@ -2173,14 +2159,11 @@
 					manageCss3Animations(options,current_obj,audio7_html5_container,false);
 					setCookie(options,'cookie_autoPlay', false);
 				} else {
-				manageCss3Animations(options,current_obj,audio7_html5_container,true);
-				audio7_html5_play_btn.addClass('AudioPause');
-				setTimeout(function (){
 					document.getElementById(current_obj.audioID).play();
-					
-					
+					audio7_html5_play_btn.addClass('AudioPause');
+					manageCss3Animations(options,current_obj,audio7_html5_container,true);
 					setCookie(options,'cookie_autoPlay', true);
-				}, 1400);}
+				}
 			});
 
 			audio7_html5_rewind_btn.on( "click", function() {
@@ -2560,15 +2543,11 @@
 									//nothing
 								} else {
 									if (options.autoPlay) {
-									manageCss3Animations(options,current_obj,audio7_html5_container,true);
-									setTimeout(function (){
-
 										cancelAll(options,audio7_html5_container);
 										document.getElementById(current_obj.audioID).play();
 										//audio7_html5_play_btn.click();
 										audio7_html5_play_btn.addClass('AudioPause');
-										}, 1400);
-										
+										manageCss3Animations(options,current_obj,audio7_html5_container,true);
 									} else {
 										audio7_html5_play_btn.removeClass('AudioPause');
 										manageCss3Animations(options,current_obj,audio7_html5_container,false);
