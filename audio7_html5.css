@@ -35,7 +35,11 @@ available controllers:
 
 .audio7_html5_sticky {
 	width: 100%;
-	position: sticky;
+	position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
 	z-index: 999999;
 	bottom: 0px;
 	left: 0px;
@@ -1669,7 +1673,7 @@ openUpLeftRetournApollo2      Made by Christian Pucci
 	/*top:0;*/
 	z-index:1;
 	left:0;
- 
+  
 	width:149px;
 	height:134px;
 
