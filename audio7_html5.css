@@ -35,7 +35,7 @@ available controllers:
 
 .audio7_html5_sticky {
 	width: 100%;
-	position: fixed;
+	position: sticky;
 	z-index: 999999;
 	bottom: 0px;
 	left: 0px;
@@ -534,7 +534,7 @@ available controllers:
 	font-weight: normal;
 	/*border:1px solid #CC6;*/
 }
-@media (max-width: 567)
+
 .audio7_html5.whiteControllers .songAuthor a:link {
   text-decoration: none;
 }
