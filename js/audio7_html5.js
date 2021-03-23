@@ -1579,9 +1579,9 @@
 			//var audio7_html5_the_bars=$('<div class="barsContainer"><div id="bars" class="perspectiveDownZero"><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2" style="display:none;"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div><div class="bar sound2"></div></div><div id="bars"><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound" style="display:none;"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div><div class="bar sound"></div></div></div>');
 			if($(window).width() > 992) 
 {
-   var audio7_html5_the_bars=$('<div class="barsContainer"><canvas id="output" height="60" width="200"></canvas></div>');// change functionality for smaller screens
+   var audio7_html5_the_bars=$('<div class="barsContainer"><canvas id="output" height="80" width="300"></canvas></div>');// change functionality for  larger screens
 } else {
-   var audio7_html5_the_bars=$('<div class="barsContainer"></div>');// change functionality for larger screens
+   var audio7_html5_the_bars=$('<div class="barsContainer"></div>');// change functionality for  smaller screens
 };
 		
 			var audio7_html5_vinyl_record_on=$('<div class="pickUp_on"><div class="disc xWheel1"></div><div class="openUpLeftRetournApollo ac"></div></div>');
@@ -1753,7 +1753,7 @@
 
 				stickyFixedPlayerWidth:980,
 				//audioID:'audio7_audio_tag_id_'+randNo
-				audioID:'audio7_audio_tag_id_Slava'
+				audioID:'audio7_Slava'
 			};
 			//current_obj.audioID=audio7_html5_Audio.attr('id');
 			current_obj.html5_audio_tag=$('<audio id="'+current_obj.audioID+'" preload="metadata"></audio>');
