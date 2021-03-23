@@ -1327,7 +1327,7 @@
 								'-o-animation-play-state':'paused',
 								'animation-play-state':'paused'
 							});
-							if (options.playerWidth<645) {
+							if (options.playerWidth<668) {
 									if (options.showVinylRecord) {
 											$('.pickUp_on', audio7_html5_container).css({
 												'visibility':'hidden',
@@ -1366,7 +1366,7 @@
 								'animation-play-state':'running'
 							});
 
-							if (options.playerWidth<645) {
+							if (options.playerWidth<668) {
 									if (options.showVinylRecord) {
 											$('.pickUp_on', audio7_html5_container).css({
 												'visibility':'hidden',
@@ -1534,7 +1534,7 @@
 				'animation-play-state':'paused'
 			});
 
-			if (options.playerWidth>=645) {
+			if (options.playerWidth>=668) {
 				$('.pickUp_on').each(function() {
 					if ( $(this).css('display')=='block' ) {
 							$(this).css({
@@ -1595,7 +1595,7 @@
 
 			audio7_html5_container.addClass(options.skin);
 			audio7_html5_container.append(audio7_html5_controlsDef);
-			audio7_html5_container.append(audio7_html5_the_bars);
+			//audio7_html5_container.append(audio7_html5_the_bars);
 			audio7_html5_container.append(audio7_html5_vinyl_record_on);
 			audio7_html5_container.append(audio7_html5_vinyl_record_off);
 
